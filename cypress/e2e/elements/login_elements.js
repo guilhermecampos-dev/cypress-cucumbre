@@ -2,6 +2,6 @@ class LoginElements {
 
     inputEmail = () => {return '#email'}
     inputPassword = () => {return '#password'}
-    btnLogin = () => {return '#submitBTN'}
+    submitLogin = () => {return '#submitBTN'}
 
 }export default LoginElements

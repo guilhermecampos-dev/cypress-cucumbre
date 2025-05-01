@@ -26,7 +26,7 @@ class LoginPage{
     }
 
     submitLogin(){
-        cy.get(loginElements.btnLogin()).click()
+        cy.get(loginElements.submitLogin()).click()
     }
 
 
