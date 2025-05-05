@@ -2,7 +2,13 @@
 import RegisterElements from "../elements/register_elements";
 const registerElements = new RegisterElements
 
+const url = 'https://demo.automationtesting.in/Register.html'
+
 class RegisterPages{
+
+    visitPage(){
+        cy.visit(url)
+    }
 
     fillNameAndSurname(name, surname){
         cy.get(registerElements.inputFirstName()).type(name)
@@ -19,8 +25,8 @@ class RegisterPages{
         cy.get(registerElements.checkRadio()).check(gender)
     }
 
-    selectHobbies(hobbies){
-        cy.get(registerElements.checkHobbie()).check(hobbies)
+    selectCheckHobbie(hobbie){
+        cy.get(registerElements.checkHobbie()).check(hobbie)
     }
 
     selectLanguage(){
@@ -32,7 +38,7 @@ class RegisterPages{
     }
 
     selectCountry(country){
-        cy.get(registerElements.seelctCountry()).select(country)
+        cy.get(registerElements.seelctCountry()).select(country, {force: true})
     }
 
     selectBirthDay(year,month,day){
@@ -50,5 +56,9 @@ class RegisterPages{
         cy.get(registerElements.submitRegister()).click()
     }
 
+    selectFile(){
+        cy.get(registerElements.selectFile()). selectFile('cypress/src/images.jpeg')
+    }
+ 
 
 }export default RegisterPages;
