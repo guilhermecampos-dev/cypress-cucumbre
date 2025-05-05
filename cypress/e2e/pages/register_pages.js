@@ -55,6 +55,7 @@ class RegisterPages{
     btnSubmit(){
         cy.get(registerElements.submitRegister()).click()
     }
+    
 
     selectFile(){
         cy.get(registerElements.selectFile()). selectFile('cypress/src/images.jpeg')
